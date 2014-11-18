@@ -6,7 +6,7 @@ module ReplayApi
     let(:container) { container_class.new(attributes) }
     let(:attributes) { {} }
     before do
-      container_class.include CompactAttributes
+      container_class.send(:include,CompactAttributes)
     end
 
     describe '#compact_attributes' do

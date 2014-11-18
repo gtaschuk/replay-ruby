@@ -3,7 +3,7 @@ require 'replay_api/address'
 module ReplayApi
   class TraitProperties < Model
 
-    attribute :address, Address, default: -> (_, _) { Address.new }
+    attribute :address, Address, default: lambda { |_, _| Address.new }
     attribute :age, Integer
     attribute :birthday, String
     attribute :avatar, String
@@ -21,7 +21,7 @@ module ReplayApi
     attribute :page_url, String
     attribute :past_event, Integer, default: 0
     attribute :phone, String
-    attribute :timestamp, Integer, default: -> (_, _) { clock.now }
+    attribute :timestamp, Integer, default: lambda { |_, _| clock.now }
     attribute :title, String
     attribute :username, String
 

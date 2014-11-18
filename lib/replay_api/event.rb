@@ -5,7 +5,7 @@ module ReplayApi
 
     attribute :event_name, String
     attribute :distinct_id, String
-    attribute :properties, EventProperties, default: -> (_, _) { EventProperties.new }
+    attribute :properties, EventProperties, default: lambda { |_, _| EventProperties.new }
 
   end
 end

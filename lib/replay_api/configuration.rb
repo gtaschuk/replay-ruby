@@ -22,12 +22,12 @@ module ReplayApi
 
     def extend_event_properties(&block)
       yield EventPropertiesExtensions
-      ReplayApi::EventProperties.include EventPropertiesExtensions
+      ReplayApi::EventProperties.send(:include, EventPropertiesExtensions)
     end
 
     def extend_trait_properties(&block)
       yield TraitPropertiesExtensions
-      ReplayApi::TraitProperties.include TraitPropertiesExtensions
+      ReplayApi::TraitProperties.send(:include, TraitPropertiesExtensions)
     end
   end
 end
